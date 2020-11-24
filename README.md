@@ -1,6 +1,7 @@
 Xin chào ,cảm ơn bạn đã ghé thăm sản phẩm của chúng tôi !
 
 Thay đổi port id trên XAMPP:
+
 Bước 1 : Vào Config Apache(httpd.conf), bạn tìm đến đoạn Listen 80 và thay đổi thành Listen 8080
 
 Bước 2 : Tiếp theo bạn tìm đến ServerName localhost:80 và thay thành ServerName localhost:8080 và lưu lại.
