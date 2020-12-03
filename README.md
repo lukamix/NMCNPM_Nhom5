@@ -8,11 +8,14 @@
 - MySQL : https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.22.0.msi
 *- Môi trường java trên máy : https://download.oracle.com/otn/java/jdk/14.0.2+12/205943a0976c4ed48cb16f1043c5c647/jdk-14.0.2_windows-x64_bin.exe
 (Sau đó chuột phải vào This PC trên Desktop,Chọn Properties ->Advanced system settings ->Environment Variables ->ở phần System variables ở dưới ,tìm mục Path ,bấm vào Browse -> tìm đến thư mục chứa JDK C:\Program Files\Java\jdk-14.0.2\bin)*
+
 **Thêm Thư Viện Vào Project**
 - Ở giao diện Netbeans, Chọn File->Open Project ,tìm đến thư mục chứa project vừa tải (Project sẽ có icon là hình cốc cà phê) ,chọn project và bấm Open Project
 -Sẽ có thông báo Project Problem -> bấm chọn Close
 - Bấm chuột phải vào Libraries trên project-> Add Jar/Folder, tìm đếm đường dẫn NMCNPM_Nhom5-master/dist/lib và bấm Ctrl+A -> Open
+
 ***Tiếp theo bạn phải cấu hình XAMPP để có thể sử dụng database ***
+
 **Cấu hình XAMPP để sử dụng database**
 
 Cổng port id chúng tôi sử dụng để demo tính năng database: Apache (8080 + 4433); MySQL (3306)
