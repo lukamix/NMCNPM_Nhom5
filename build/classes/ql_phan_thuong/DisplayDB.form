@@ -41,18 +41,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="704" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="QuayLai" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                           <Component id="TheoSuKien" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="TheoGiaDinh" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="TheoGiaDinh" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                           <Component id="ChiTiet" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" min="-2" pref="611" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
