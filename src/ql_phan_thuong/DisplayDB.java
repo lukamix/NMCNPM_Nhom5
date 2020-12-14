@@ -161,10 +161,12 @@ public class DisplayDB extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(url, user, password);
             
             String sql = "SELECT Event.Name AS 'Tên sự kiện', Event.Year AS 'Năm', "
+                    + "Family.Father AS 'Họ tên Bố', Family.Mother AS 'Họ tên Mẹ', "
                     + "Recipient.Name AS 'Người nhận', Gift.Gift_Name AS Quà, Receive_Gift.Quantity AS 'Số lượng', "
                     + "Achievement.Achievement_Name AS 'Thành tích' "
-                    + "FROM Event, Receive_Gift, Recipient, Gift, Achievement "
-                    + "WHERE Event.ID = Receive_Gift.ID_Event "
+                    + "FROM Family, Event, Receive_Gift, Recipient, Gift, Achievement "
+                    + "WHERE Family.ID = Recipient.ID_Family "
+                    + "AND Event.ID = Receive_Gift.ID_Event "
                     + "AND Recipient.ID = Receive_Gift.ID_Recipient "
                     + "AND Gift.ID = Receive_Gift.ID_Gift "
                     + "AND Achievement.ID = Receive_Gift.ID_Achievement";
@@ -181,7 +183,7 @@ public class DisplayDB extends javax.swing.JFrame {
     public void showTheoGiaDinh(){
         try{
             Connection con = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT Family.Father AS 'Họ tên Bố', Family.Mother AS 'Họ tên Mẹ', "
+            String sql = "SELECT Family.Father AS 'Họ tên Bố', Family.Mother AS 'Họ tên Mẹ', Recipient.Name AS 'Người nhận', "
                     + "Gift.Gift_Name AS 'Quà', SUM(Gift.Cost) AS 'Giá', SUM(Receive_Gift.Quantity) AS 'Số lượng' "
                     + "FROM Family, Recipient, Receive_Gift, Gift "
                     + "WHERE Family.ID = Recipient.ID_Family "
@@ -201,12 +203,12 @@ public class DisplayDB extends javax.swing.JFrame {
     public void showTheoSuKien(){
         try{
             Connection con = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT Event.Name AS 'Tên sự kiện', Event.Year AS Năm,"
-                    + " Gift.Gift_Name AS Quà, Gift.Cost AS Giá, Receive_Gift.Quantity AS 'Số lượng'"
+            String sql = "SELECT DISTINCT Event.Name AS 'Tên sự kiện', Event.Year AS 'Năm',"
+                    + " Gift.Gift_Name AS Quà, SUM(Gift.Cost) AS Giá, SUM(Receive_Gift.Quantity) AS 'Số lượng'"
                     + "FROM Event, Receive_Gift, Gift "
                     + "WHERE Event.ID = Receive_Gift.ID_Event "
                     + "AND Gift.ID = Receive_Gift.ID_Gift "
-                    + "GROUP BY Event.ID, Gift.ID";
+                    + "GROUP BY Event.ID";
             //System.out.println("33333");
             PreparedStatement pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
