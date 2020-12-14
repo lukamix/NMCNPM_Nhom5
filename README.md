@@ -39,3 +39,18 @@ Bước 1: Truy cập localhost tại địa chỉ localhost:8080/phpmyadmin
 Bước 2: Tạo database mới có tên là homework1_db
 
 Bước 3: Trong tab SQL của database vừa tạo, copy câu lệnh SQL trong file homework1_db.sql và ấn thực thi để tạo bảng và dữ liệu demo cho chương trình 
+
+**Cách lấy dữ liệu từ google sheet**
+
++ Biểu mẫu để lấy dữ liệu Tết thiếu nhi: https://docs.google.com/forms/d/18nCG4FMcXF6CC-Naw8D_AKeGyaBLO-J6ehHoRKTMEEU/edit
++ Biểu mẫu để lấy dữ liệu Trung thu: https://docs.google.com/forms/d/1ylUXNeo_bWjxBrXZvNUodR_5YZI_2Vfoyi1JjfEVz60/edit
++ Biểu mẫu để lấy dữ liệu Cuối năm: https://docs.google.com/forms/d/1A24QK-o0YfC4baGOVbnP-dgU0gvy244dbNk3piPtLoQ/edit
+
++ GG Sheet lưu dữ liệu Tết thiếu nhi: https://docs.google.com/spreadsheets/d/1J3nIeCa54XzUfyPMjxARNuEDsDnfnNeT3ToxUEe0LXc/edit#gid=732156435
++ GG Sheet lưu dữ liệu Trung thu: https://docs.google.com/spreadsheets/d/1jzUZlUmLuYL7JqUsq80hGmnzYwVevtDaNIUExvZwax4/edit#gid=2087115799
++ GG Sheet lưu dữ liệu Cuối năm: https://docs.google.com/spreadsheets/d/1FhwhQNRZfvuXvfIdJav8y5d3NJ3jcqLHzHsAwhtfZlI/edit#gid=1866053596
+
+Sau khi người dùng nhập dữ liệu vào biểu mẫu, dữ liệu sẽ được hiển thị trong gg sheet tương ứng. 
+Mở phần mềm, chọn sự kiện tương ứng, nhấn Update từ sheet dữ liệu từ sheet sẽ được tự động cập nhật vào database
+- Người dùng có thể xem minh chứng bằng cách vào gg sheet tương ứng, nhấn vào link trong cột Ảnh minh chứng để hiển thị
+
