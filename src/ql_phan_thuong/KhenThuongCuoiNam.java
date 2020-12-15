@@ -1,8 +1,10 @@
 package ql_phan_thuong;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.File;
@@ -48,6 +50,7 @@ public class KhenThuongCuoiNam extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
+    
     
     public KhenThuongCuoiNam() {
         initComponents();
@@ -476,12 +479,19 @@ public class KhenThuongCuoiNam extends javax.swing.JFrame {
             }
         else{
             
-            /*ImageIcon icon = (ImageIcon) ImageArea.getIcon();
+            ImageIcon icon = (ImageIcon) ImageArea.getIcon();
             Image minhchung = icon.getImage();
-            String picturepath = "src/ql_phan_thuong/Picture/"+Chau.getText()+ConOng.getText()+ConBa.getText()+ "image.jpg";
+            BufferedImage bi = new BufferedImage(minhchung.getWidth(null), minhchung.getHeight(null), BufferedImage.TYPE_INT_RGB); 
+            Graphics2D g = bi.createGraphics(); 
+            // paint the Icon to the BufferedImage. 
+            g.drawImage(minhchung, 0, 0,null); 
+            g.dispose();
+            
+            String picturepath = "src/ql_phan_thuong/Picture/"+HoTen.getText()+"_"+ConOng.getText()+"_"+ConBa.getText()+ "image.jpg";
             File outputfile = new File(picturepath);
             try {
-                ImageIO.write(toBufferedImage(minhchung), "jpg", outputfile);
+                ImageIO.write(bi, "jpg", outputfile);
+                
             } catch (IOException ex) {
                 Logger.getLogger(KhenThuongCuoiNam.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -493,8 +503,8 @@ public class KhenThuongCuoiNam extends javax.swing.JFrame {
                 Sheet sheet = workbook.getSheetAt(0);
                 
                 Object[] bookData = {
-                    Chau.getText(),ConOng.getText(),
-                    ConBa.getText(),TruongLop.getText(),ThanhTich.getText(),picturepath,PhanThuong.getText(),
+                    Nam.getText(), HoTen.getText(),ConOng.getText(),
+                    ConBa.getText(),Truong.getText(),ThanhTich.getText(),picturepath,PhanQua.getText(),
                     GiaTri.getText()
                 };
                 int rowCount;
@@ -520,7 +530,7 @@ public class KhenThuongCuoiNam extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(MidAutumn.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(rootPane, "Đã Lưu !");*/
+            //JOptionPane.showMessageDialog(rootPane, "Đã Lưu !");
             try{
                 con = DriverManager.getConnection(url, user, password);
                 String insert = "";
@@ -926,7 +936,8 @@ public class KhenThuongCuoiNam extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ThemActionPerformed
-    public static BufferedImage toBufferedImage(Image img)
+    
+    /*public static BufferedImage toBufferedImage(Image img) throws IOException
 {
     if (img instanceof BufferedImage)
     {
@@ -940,10 +951,10 @@ public class KhenThuongCuoiNam extends javax.swing.JFrame {
     Graphics2D bGr = bimage.createGraphics();
     bGr.drawImage(img, 0, 0, null);
     bGr.dispose();
-
+    
     // Return the buffered image
     return bimage;
-}
+}*/
     private void DanhSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachActionPerformed
         /*KhenThuongCuoiNamList ktcnl = new KhenThuongCuoiNamList();
         ktcnl.setVisible(true);
